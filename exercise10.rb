@@ -22,8 +22,11 @@ puts students.keys #using inbuilt keys method to output the cohort names
 #increase cohort size by 5%
 def increasevolume(cohort) #take hash students as argument 
 	cohort.each do |key, value|
-		puts "new cohort size #{value * 1.05}" #increase value by 5%
-	end 
+	cohort[key] = value * 1.05 #increase value by 5%
+		
+	end    
+	return cohort
+	#return new_value
 end 
 
 increasevolume(students) #call method to increase volume in students hash
@@ -36,3 +39,7 @@ end
 cohort_remover(students, :cohort2) #call method on students hash and remove :cohort2
 
 displayhash(students)
+
+increasevolume(students)
+
+
